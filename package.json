@@ -1,0 +1,27 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "Personal website of Bart Niessen",
+  "main": "index.html",
+  "devDependencies": {
+    "less": "^2.7.2",
+    "less-plugin-clean-css": "^1.5.1"
+  }
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brutusn/Website.git"
+  },
+  "keywords": [
+    "personal",
+    "website"
+  ],
+  "author": "Bart Niessen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Brutusn/Website/issues"
+  },
+  "homepage": "http://www.bartniessen.nl"
+}

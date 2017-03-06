@@ -1,2 +1,2 @@
 # Website
-Website code.
+De code van de website: http://www.bartniessen.nl.
