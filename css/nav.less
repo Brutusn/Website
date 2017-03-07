@@ -4,28 +4,39 @@ nav {
 .tabs {
     list-style: none;
     padding: 0;
-    margin: @normal;
+    margin: @normal @normal @half @normal;
 
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+}
 
-    & li {
-        background-color: @header-color;
-        color: @light-text;
-        padding: @half @normal;
-        cursor: pointer;
-        flex: .2 0 auto;
+.tab {
+    background-color: @header-color;
+    color: @light-text;
+    padding: @half @threequart;
+    margin-bottom: @half;
+    cursor: pointer;
+    flex: .2 0 auto;
 
-        text-align: center;
-        transition: background-color .1s ease-in;
+    text-align: center;
+    transition: all .1s ease-in;
 
-        &:hover {
-            background-color: @header-hover;
-        }
+    .z-depth();
 
-        &:not(:last-of-type) {
-            margin-right: @half;
-        }
+    &:hover {
+        background-color: @header-hover;
+        .z-depth(6);
     }
+    &:not(:last-of-type) {
+        margin-right: @half;
+    }
+}
+
+.emphasize {
+    font-weight: bold;
+    background-color: @lighter2;
+}
+.tab-active {
+    background-color: @darker2;
 }
