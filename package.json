@@ -6,9 +6,9 @@
   "devDependencies": {
     "less": "^2.7.2",
     "less-plugin-clean-css": "^1.5.1"
-  }
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "css": "lessc --no-color --clean-css=\"--advanced\" css/total.less > css/css.min.css"
   },
   "repository": {
     "type": "git",
