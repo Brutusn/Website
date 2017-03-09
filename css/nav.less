@@ -1,10 +1,12 @@
 nav {
     width: 100%;
+    margin: 0;
+    padding: @half;
 }
 .tabs {
     list-style: none;
-    padding: 0;
-    margin: @normal @normal @half @normal;
+    padding: @quart;
+    margin: 0;
 
     display: flex;
     flex-flow: row wrap;
@@ -15,7 +17,7 @@ nav {
     background-color: @header-color;
     color: @light-text;
     padding: @half @threequart;
-    margin-bottom: @half;
+    margin: @quart;
     cursor: pointer;
     flex: .2 0 auto;
 
@@ -28,14 +30,10 @@ nav {
         background-color: @header-hover;
         .z-depth(6);
     }
-    &:not(:last-of-type) {
-        margin-right: @half;
-    }
 }
 
 .emphasize {
     font-weight: bold;
-    background-color: @lighter2;
 }
 .tab-active {
     background-color: @darker2;

@@ -3,10 +3,14 @@
 html, body {
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 body {
     background-color: @lightgray;
+    background-image: url(../img/hexagons.svg);
+    background-attachment: fixed;
+
     font: @font;
     color: @dark-text;
 }
@@ -19,5 +23,5 @@ body {
 @import "header.less";
 @import "nav.less";
 @import "main.less";
-@import "footer.less";
+@import "aside.less";
 @import "mediaqueries.less";

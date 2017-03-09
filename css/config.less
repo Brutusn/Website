@@ -4,8 +4,9 @@
 
 // COLOURS
 @lightgray: #ECECEC;
+@fullwhite: #FFFFFF;
 
-@base-color: hsl(235, 46%, 42%);
+@base-color: hsl(180, 46%, 42%);
 @complement1: spin(@base-color, 180);
 @complement2: darken(spin(@base-color, 180), 5%);
 @lighter1: lighten(spin(@base-color, 5), 10%);
@@ -16,8 +17,8 @@
 @header-color: @base-color;
 @header-hover: @complement2;
 
-@dark-text: hsl(225, 50%, 15%);
-@light-text: hsl(225, 50%, 95%);
+@dark-text: hsl(hue(@base-color), saturation(@base-color), 15%);
+@light-text: hsl(hue(@base-color), saturation(@base-color), 95%);
 
 // FONTS
 @font-size: 16px;
@@ -28,6 +29,7 @@
 // SIZES
 @base-size: 1em;
 
+@double: @base-size * 2;
 @bigger: @base-size * 1.5;
 @big: @base-size * 1.25;
 @normal: @base-size;

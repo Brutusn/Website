@@ -1,8 +1,25 @@
 main {
-    display: flex;
-    flex-flow: column wrap;
+    //
 }
 
-article:not(.article-active) {
-    display: none;
+article {
+    padding: @half;
+    display: flex;
+    height: 100%;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    &:not(.article-active) {
+        display: none;
+    }
+}
+
+.card {
+    background-color: @fullwhite;
+    flex: .25 1 500px;
+
+    padding: @normal;
+    margin: @half;
+
+    .z-depth-2dp;
 }
