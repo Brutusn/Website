@@ -1,6 +1,8 @@
-const tabs = document.getElementById("tab-wrap").children,
-    tabActive = "tab-active",
-    articleActive = "article-active";
+"use strict";
+
+const tabs = document.getElementById("tab-wrap").children;
+const tabActive = "tab-active";
+const articleActive = "article-active";
 
 // What happens when you click a tab..
 function tabClick () {
@@ -26,7 +28,7 @@ function hashParser () {
     const hash = location.hash.replace("#", "");
 
     if (hash) {
-        article = document.getElementById(hash);
+        const article = document.getElementById(hash);
 
         if (article) {
             removeClasses(articleActive);
@@ -43,18 +45,18 @@ function hashParser () {
 // Date in format DD-MM-YYYY (AND NO OTHER FFS!)
 function getAge (date, onDate) {
     // Manual parse to avoid inconsistancies with Date.parse implementation.
-    const unparsedArr = date.split("-"),
-        history = new Date(+unparsedArr[2], (+unparsedArr[1] - 1), (+unparsedArr[0] + 1)),
-        today = new Date(),
-        tY = today.getUTCFullYear(),
-        hY = history.getUTCFullYear(),
-        tM = today.getUTCMonth(),
-        hM = history.getUTCMonth(),
-        tD = today.getUTCDate(),
-        hD = history.getUTCDate();
+    const unparsedArr = date.split("-");
+    const history = new Date(+unparsedArr[2], (+unparsedArr[1] - 1), (+unparsedArr[0] + 1));
+    const today = new Date();
+    const tY = today.getUTCFullYear();
+    const hY = history.getUTCFullYear();
+    const tM = today.getUTCMonth();
+    const hM = history.getUTCMonth();
+    const tD = today.getUTCDate();
+    const hD = history.getUTCDate();
 
-    let age = tY - hY,
-        month = tM - hM;
+    let age = tY - hY;
+    let month = tM - hM;
 
     if (month < 0 || (month === 0 && (tD < hD))) {
         age--;
@@ -78,8 +80,8 @@ window.addEventListener("hashchange", hashParser);
 
 // Sets age specific to my birthday (31-03-1987);
 (function setAge() {
-    const elems = document.getElementsByClassName("set-age"),
-        currentAge = getAge("31-03-1987", (age) => {
+    const elems = document.getElementsByClassName("set-age");
+    const currentAge = getAge("31-03-1987", (age) => {
             document.getElementById("header-title").textContent = `FEEST! Ik ben vandaag ${age} geworden!`;
         });
 
