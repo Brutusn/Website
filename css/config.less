@@ -4,6 +4,8 @@
 
 // COLOURS
 @lightgray: #ECECEC;
+@other-lightgray: darken(spin(@lightgray, 180), 5%);
+
 @fullwhite: #FFFFFF;
 
 @base-color: hsl(180, 46%, 42%);
@@ -11,8 +13,8 @@
 @complement2: darken(spin(@base-color, 180), 5%);
 @lighter1: lighten(spin(@base-color, 5), 10%);
 @lighter2: lighten(spin(@base-color, 10), 20%);
-@darker1: darken(spin(@base-color, -5), 10%);
-@darker2: darken(spin(@base-color, -10), 20%);
+@darker1: darken(@base-color, 10%);
+@darker2: darken(@base-color, 20%);
 
 @header-color: @base-color;
 @header-hover: @complement2;
@@ -37,6 +39,10 @@
 @half: @base-size * 0.5;
 @quart: @base-size * 0.25;
 @small: @base-size * 0.125;
+
+.gradient-bg-pure(@color1, @color2) {
+    background-image: linear-gradient(to bottom, @color1 0%, @color2 100%);
+}
 
 
 

@@ -1,11 +1,14 @@
 header {
     text-align: center;
-    background-color: @header-color;
     overflow: hidden;
+
+    background-color: @header-color;
+    background-image: url(../img/hexagons.svg), linear-gradient(to bottom, @header-color 0%, @darker1 100%);
+    background-attachment: fixed;
 
     width: 100%;
     margin: 0;
-    padding: @bigger @half;
+    padding: (2 * @double) @half;
 
     & > h1 {
         color: @light-text;

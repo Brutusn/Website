@@ -3,14 +3,19 @@ main {
 }
 
 article {
-    padding: @half;
+    padding: @double @half;
     display: flex;
-    height: 100%;
     flex-flow: row wrap;
     justify-content: space-around;
 
+    background-color: @lightgray;
+
     &:not(.article-active) {
-        display: none;
+        //display: none;
+    }
+    &:nth-of-type(even) {
+        background-color: @other-lightgray;
+        background-image: linear-gradient(to bottom, @lightgray 0%, @other-lightgray 10%, @other-lightgray 90%, @lightgray 100%);
     }
 }
 
@@ -21,5 +26,5 @@ article {
     padding: @normal;
     margin: @half;
 
-    .z-depth-2dp;
+    .z-depth(2);
 }

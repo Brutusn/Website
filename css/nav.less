@@ -2,7 +2,15 @@ nav {
     width: 100%;
     margin: 0;
     padding: @half;
+    .z-depth(2);
+    background-color: @lightgray;
 }
+.nav-sticky-top {
+    position: fixed;
+    top: 0;
+    .z-depth(4);
+}
+
 .tabs {
     list-style: none;
     padding: @quart;
@@ -16,7 +24,6 @@ nav {
 .tab {
     background-color: @header-color;
     color: @light-text;
-    padding: @half @threequart;
     margin: @quart;
     cursor: pointer;
     flex: .2 0 auto;
@@ -29,6 +36,13 @@ nav {
     &:hover {
         background-color: @header-hover;
         .z-depth(6);
+    }
+    & > a {
+        display: block;
+        padding: @half @threequart;
+        width: 100%;
+        text-decoration: none;
+        color: inherit;
     }
 }
 

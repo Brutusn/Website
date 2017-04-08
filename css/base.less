@@ -7,16 +7,38 @@ html, body {
 }
 
 body {
-    background-color: @lightgray;
-    background-image: url(../img/hexagons.svg);
-    background-attachment: fixed;
-
     font: @font;
     color: @dark-text;
+    background-color: @lightgray;
 }
 
 *, *:after, *:before {
     box-sizing: border-box;
+}
+
+.no-top-margin {
+    margin-top: 0;
+}
+.no-bottom-margin {
+    margin-bottom: 0;
+}
+.pre-wrap {
+    white-space: pre-wrap;
+}
+.site-link {
+    text-decoration: none;
+    color: @base-color;
+    transition: color .2s ease;
+    &:active {
+        color: @darker2;
+    }
+    &:visited {
+        color: @base-color;
+    }
+    &:hover {
+        color: @complement2;
+        text-decoration: underline;
+    }
 }
 
 
