@@ -1,17 +1,31 @@
+/**
+ * @file index.js
+ * @description Script code for Bart's Website.
+ * @author Bart Niessen <bart.niessen@gmail.com> {@link https://github.com/Brutusn https://github.com/Brutusn}.
+ * @copyright Bart Niessen 2017
+ * @license See LICENSE file included in this distribution.
+ */
+
 "use strict";
 
-const navElem = document.querySelector("nav");
-const firstArticle = document.getElementById("landing");
-
+// Define control flags
 let isScrolling = false;
 let menuClick = false;
 
-// Simple function that removes classes based on the given class name.
-function removeClasses (classname) {
-    const elems = document.getElementsByClassName(classname);
+// Get references to DOM elements
+const navEl = document.querySelector("nav");
+const articleEl = document.getElementById("landing"); // The first? article...
 
-    for (let i = 0; i < elems.length; i++) {
-        elems[i].classList.remove(classname);
+
+/**
+ * Simple function that removes classes based on the given class name.
+ * @param className
+ */
+function removeClasses (className) {
+    const elements = document.getElementsByClassName(className);
+
+    for (const el of elements) {
+        el.classList.remove(className);
     }
 }
 
@@ -21,10 +35,6 @@ function hashNoTag (hash) {
 
 function scroller (y) {
     window.scrollTo(0, Math.floor(y));
-}
-
-function bBox (elem) {
-    return elem.getBoundingClientRect();
 }
 
 // t: current time, b: begin value, c: change in value thus end - begin, d: duration
@@ -42,7 +52,7 @@ function scrollToElement (id) {
         top: 0,
         positive: true
     };
-    const nav = navElem.clientHeight;
+    const nav = navEl.clientHeight;
 
     console.info(id, elementOffset);
 
@@ -80,7 +90,6 @@ function scrollToElement (id) {
         scrollTo.positive = false;
     }
 
-    // Start the animation.
     function animation() {
         //setTimeout(function (){},fps);
         if (i < scrollTime) {
@@ -94,25 +103,26 @@ function scrollToElement (id) {
                 // If it's within range set is to stick to the place we want.
                 scroller(scrollTo.top);
                 menuClick = false;
-                return;
             }
         }
     }
+
+    // Start the animation.
     animation();
 }
 
 function onScroll () {
-    const nav = bBox(navElem);
-    const header = bBox(firstArticle);
+    const navBBox = navEl.getBoundingClientRect();
+    const headerBBox = articleEl.getBoundingClientRect();
 
     // Sticky the navigation!
-    if (nav.top <= 0 && header.top <= nav.height) {
-        navElem.classList.add("nav-sticky-top");
-        firstArticle.style.marginTop = `${nav.height}px`;
+    if (navBBox.top <= 0 && headerBBox.top <= navBBox.height) {
+        navEl.classList.add("nav-sticky-top");
+        articleEl.style.marginTop = `${navBBox.height}px`;
     } else {
         //if (box2.top >= box.height) {
-        navElem.classList.remove("nav-sticky-top");
-        firstArticle.style.marginTop = 0;
+        navEl.classList.remove("nav-sticky-top");
+        articleEl.style.marginTop = 0;
     }
     isScrolling = false;
 }
@@ -124,7 +134,10 @@ function requestScroll () {
     isScrolling = true;
 }
 
-// What happens when you click a tab..
+/**
+ * What happens when you click a tab..
+ * @param {Event} evt
+ */
 function tabClick (evt) {
     const tabActive = "tab-active";
 
@@ -139,8 +152,12 @@ function tabClick (evt) {
     scrollToElement(hashNoTag(this.hash));
 }
 
-// Function to calculate age from a data, plus action to take if date is current
-// Date in format DD-MM-YYYY (AND NO OTHER FFS!)
+/**
+ * Function to calculate age from a data, plus action to take if date is current
+ * @param {string} date - Date in format DD-MM-YYYY (AND NO OTHER FFS!)
+ * @param {Function} onDate
+ * @returns {number} - the age value
+ */
 function getAge (date, onDate) {
     // Manual parse to avoid inconsistancies with Date.parse implementation.
     const unparsedArr = date.split("-");
@@ -160,33 +177,34 @@ function getAge (date, onDate) {
         age--;
     }
 
-    if (onDate) {
-        if (tM === hM && tD === hD) {
-            onDate(age);
-        }
+    if (typeof onDate === "function" && tM === hM && tD === hD) {
+        onDate(age);
     }
+
     return age;
 }
 
 // initialization functionality, happens once.
 (function initialization () {
-    const baseTabs = document.getElementById("tab-wrap").children;
-    const elems = document.getElementsByClassName("set-age");
-    const currentAge = getAge("31-03-1987", (age) => {
-            // Sets age specific to my birthday (31-03-1987);
-            document.getElementById("header-title").textContent = `FEEST! Ik ben vandaag ${age} geworden!`;
-        });
+
     const hash = location.hash;
     const tabActive = "tab-active";
 
+    // Calculate age.
+    const currentAge = getAge("31-03-1987", (age) => {
+        document.getElementById("header-title").textContent = `FEEST! Ik ben vandaag ${age} geworden!`;
+    });
+
     // Add click events to the tabs.
-    for (let i = 0; i < baseTabs.length; i++) {
-        baseTabs[i].firstChild.addEventListener("click", tabClick);
+    const baseTabs = document.getElementById("tab-wrap").children;
+    for (const baseTab of baseTabs) {
+        baseTab.firstChild.addEventListener("click", tabClick);
     }
 
-    // Sets age specific to my birthday (31-03-1987);
-    for (let i = 0; i < elems.length; i++) {
-        elems[i].textContent = currentAge;
+    // Sets age specific to my birthday (31-03-1987).
+    const elements = document.getElementsByClassName("set-age");
+    for (const el of elements) {
+        el.textContent = currentAge;
     }
 
     // Function that runs to check the location hash and enables the according tab.

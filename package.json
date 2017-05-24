@@ -4,11 +4,13 @@
   "description": "Personal website of Bart Niessen",
   "main": "index.html",
   "devDependencies": {
+    "jsdoc": "^3.4.3",
     "less": "^2.7.2",
     "less-plugin-clean-css": "^1.5.1"
   },
   "scripts": {
-    "css": "lessc --no-color --clean-css=\"--advanced\" css/total.less > css/css.min.css"
+    "document": "jsdoc ./js -r -c ./conf/.jsdocrc",
+    "precompile": "lessc --no-color --clean-css=\"--advanced\" css/total.less > css/css.min.css"
   },
   "repository": {
     "type": "git",
