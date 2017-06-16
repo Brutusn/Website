@@ -1,19 +1,19 @@
-header {
+footer {
     text-align: center;
     overflow: hidden;
 
     background-color: @header-color;
-    background-image: url(../img/hexagons.svg), linear-gradient(to bottom, @header-color 0%, @darker1 100%);
+    background-image: url(../img/hexagons.svg), linear-gradient(to bottom, @darker1 0%, @header-color 100%);
     //background-attachment: fixed;
 
     flex-shrink: 0;
 
     width: 100%;
     margin: 0;
-    padding: (2 * @double) @half;
+    padding: @double @half;
 
-    & > h1 {
+    & > p {
         color: @light-text;
-        font-weight: bold;
+        font-weight: light;
     }
 }

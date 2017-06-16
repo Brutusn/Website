@@ -1,5 +1,7 @@
 main {
     //
+    flex: 1 0 auto;
+    .z-depth(2);
 }
 
 article {
@@ -9,14 +11,6 @@ article {
     justify-content: space-around;
 
     background-color: @lightgray;
-
-    &:not(.article-active) {
-        //display: none;
-    }
-    &:nth-of-type(even) {
-        background-color: @other-lightgray;
-        background-image: linear-gradient(to bottom, @lightgray 0%, @other-lightgray 10%, @other-lightgray 90%, @lightgray 100%);
-    }
 }
 
 .card {

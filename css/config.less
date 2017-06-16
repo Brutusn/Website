@@ -4,7 +4,7 @@
 
 // COLOURS
 @lightgray: #ECECEC;
-@other-lightgray: darken(spin(@lightgray, 180), 5%);
+@other-lightgray: var(--darken(spin(@lightgray, 180), 5%));
 
 @fullwhite: #FFFFFF;
 
@@ -21,6 +21,10 @@
 
 @dark-text: hsl(hue(@base-color), saturation(@base-color), 15%);
 @light-text: hsl(hue(@base-color), saturation(@base-color), 95%);
+
+:root {
+
+}
 
 // FONTS
 @font-size: 16px;
