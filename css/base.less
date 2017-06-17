@@ -8,8 +8,8 @@ html, body {
 
 body {
     font: @font;
-    color: @dark-text;
-    background-color: @lightgray;
+    color: var(--dark-text);
+    background-color: var(--lightgray);
 
     display: flex;
     flex-flow: column nowrap;
@@ -30,16 +30,16 @@ body {
 }
 .site-link {
     text-decoration: none;
-    color: @base-color;
+    color: var(--base-color);
     transition: color .2s ease;
     &:active {
-        color: @darker2;
+        color: var(--darker2);
     }
     &:visited {
-        color: @base-color;
+        color: var(--base-color);
     }
     &:hover {
-        color: @complement2;
+        color: var(--complement2);
         text-decoration: underline;
     }
 }

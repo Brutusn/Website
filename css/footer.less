@@ -2,8 +2,8 @@ footer {
     text-align: center;
     overflow: hidden;
 
-    background-color: @header-color;
-    background-image: url(../img/hexagons.svg), linear-gradient(to bottom, @darker1 0%, @header-color 100%);
+    background-color: var(--header-color);
+    background-image: url(./img/hexagons.svg), linear-gradient(to bottom, var(--darker1) 0%, var(--header-color) 100%);
     //background-attachment: fixed;
 
     flex-shrink: 0;
@@ -13,7 +13,7 @@ footer {
     padding: @double @half;
 
     & > p {
-        color: @light-text;
+        color: var(--light-text);
         font-weight: light;
     }
 }

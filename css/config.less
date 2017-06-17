@@ -4,7 +4,7 @@
 
 // COLOURS
 @lightgray: #ECECEC;
-@other-lightgray: var(--darken(spin(@lightgray, 180), 5%));
+@other-lightgray: darken(spin(@lightgray, 180), 5%);
 
 @fullwhite: #FFFFFF;
 
@@ -22,8 +22,30 @@
 @dark-text: hsl(hue(@base-color), saturation(@base-color), 15%);
 @light-text: hsl(hue(@base-color), saturation(@base-color), 95%);
 
+// Native CSS variables.
 :root {
+    --fullwhite: @fullwhite;
 
+    --lightgray: @lightgray;
+    --other-lightgray: @other-lightgray;
+
+    --base-color: @base-color;
+    --complement1: @complement1;
+    --complement2: @complement2;
+    --lighter1: @lighter1;
+    --lighter2: @lighter2;
+    --darker1: @darker1;
+    --darker2: @darker2;
+
+    --header-color: @header-color;
+    --header-hover: @header-hover;
+
+    --dark-text: @dark-text;
+    --light-text: @light-text;
+
+    --ll-personal: rgb(99, 184, 184);
+    --ll-work: rgb(184, 113, 99);
+    --ll-school: rgb(107, 107, 107);
 }
 
 // FONTS
