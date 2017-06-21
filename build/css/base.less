@@ -1,0 +1,52 @@
+@import "config.less";
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font: @font;
+    color: var(--dark-text);
+    background-color: var(--lightgray);
+
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+.no-top-margin {
+    margin-top: 0;
+}
+.no-bottom-margin {
+    margin-bottom: 0;
+}
+.pre-wrap {
+    white-space: pre-wrap;
+}
+.site-link {
+    text-decoration: none;
+    color: var(--base-color);
+    transition: color .2s ease;
+    &:active {
+        color: var(--darker2);
+    }
+    &:visited {
+        color: var(--base-color);
+    }
+    &:hover {
+        color: var(--complement2);
+        text-decoration: underline;
+    }
+}
+
+
+@import "header.less";
+//@import "nav.less";
+@import "main.less";
+@import "footer.less";
+@import "mediaqueries.less";
