@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="NL-nl">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes">
+    <meta name="DESCRIPTION" content="Bart Niessen's personal website and portfolio">
+    <meta name="KEYWORDS" content="bart niessen veghel leiden porfolio personal website games">
+    <meta name="revisit-after" content="3 days">
+    <meta name="robots" content="all">
+
+    <meta name="application-name" content="BartSite" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#1e5252" />
+
+    <link href="css/css.min.css" rel="stylesheet">
+
+    <title>Bart Niessen in Vue</title>
+
+    <script src="https://unpkg.com/vue"></script>
+
+    <script defer src="js/vue-scripts.js"></script>
+    <script defer src="js/script.js"></script>
+</head>
+<body>
+    <header id="home">
+        <h1 id="header-title" class="header-h1">Ik ben Bart Niessen</h1>
+    </header>
+    <main>
+        <article id="landing" class="article-active">
+            <section class="card">
+                <h1 class="no-top-margin">Visitekaartje:</h1>
+                <table>
+                    <tr><td>Naam:</td><td>Bart Niessen</td></tr>
+                    <tr><td>Leeftijd:</td><td class="set-age">30</td></tr>
+                    <tr><td>Woonplaats:</td><td>Leiden</td></tr>
+                    <tr><td>Functie:</td><td>Front-end webdeveloper.</td></tr>
+                </table>
+            </section>
+            <section id="links" class="card">
+                <h1 class="no-top-margin">Je kan mij vinden op:</h1>
+                <p class="no-bottom-margin a-as-btn">
+                  <a v-for="link in links" class="site-link" :href="link.href" target="_blank">{{ link.text }}</a>
+                </p>
+            </section>
+            <section class="card">
+                <h1 class="no-top-margin">Bio:</h1>
+                <p class="no-bottom-margin pre-wrap">Mijn leven begon in 1987. Op 31 maart in Veghel om precies te zijn. Vanaf dat moment is de wereld een eigenzinnig persoon rijker!
+
+Voetballen kon ik niet, maar gelukkig kunnen dat soort kinderen bij de scouting. Mijn volledige jeugd heb ik besteed met scouting. Van de welpen naar de verkenners tot leider van de groep waar ik mijn scouting leven ben begonnen. In de jaren daarop ben ik mij ook gaan inzetten voor landelijke Jamboree's, meestal achter de bar bij team horeca.
+
+Wat ik precies wilde worden "als ik later groot ben" heb ik nooit goed geweten. Een brede interesse in de meest uiteenlopende gebieden heb ik wel. Van biologie tot muziek, van autorijden tot computers. Al snel in mijn werkende leven werd ik taxichauffeur bij Taxi Dortmans. Autorijden vind ik leuk, mensen vind ik leuk, en 1 + 1 is taxi.
+
+Toch bleef de interesse voor computers knagen. In mijn vrije tijd ben ik, naast gamen, veel met grafische dingen bezig geweest. Gewoon met 3ds max toffe animaties maken, met photoshop de mooiste banner voor het forum maken, of voor scouting een toffe kampvideo maken. Hierdoor kwam ik in aanraking met de opleiding HBO ICT op de Fontys in Eindhoven. Deze ben ik gestart en heb ik na een kleine 5 jaar keurig afgerond.
+
+Mijn afstudeerstage heb ik bij PinkRoccade Local Government gedaan. Het bedrijf maakt software voor Nederlandse gemeentes. Na het afstuderen ben ik officieel in dienst genomen en kon ik verder gaan waar ik op mijn stage was gebleven. Ik heb mij voornamelijk bezig gehouden met de GUI en front-end van een programma die de "Makelaarsuite" monitort en een programma om gegevens (bv. panden) te raadplegen via de kaart of administratief.
+Tijdens mijn werkzaamheden heb ik ruim kunnen ervaren hoe het is om in de back-end (met Node.js) te programeren, en ook SQL queries zijn geen onbekend gebied meer voor mij.</p>
+            </section>
+            <section class="card">
+                <h1 class="no-top-margin">Korte levensloop:</h1>
+                <p class="lifeline ll-personal">1987: Geboren in Veghel</p>
+                <p class="lifeline ll-personal">1995: Lid van Scouting Veghel</p>
+                <p class="lifeline ll-personal">2002: Leider bij Scouting Veghel (welpen)</p>
+                <p class="lifeline ll-school">2005: Geslaagd HAVO</p>
+                <p class="lifeline ll-work">2006: Hulpkracht Intratuin</p>
+                <p class="lifeline ll-work">2007: Gestart als taxi chauffeur</p>
+                <p class="lifeline ll-personal">2008: Start landelijk vrijwilliger Scouting Nederland</p>
+                <p class="lifeline ll-school">2009: Start HBO ICT &amp; Media design</p>
+                <p class="lifeline ll-work">2012: Stage Eindhovens Dagblad</p>
+                <p class="lifeline ll-school">2012: Minor Engels</p>
+                <p class="lifeline ll-personal">2014: Barhoofd Nawaka 2014</p>
+                <p class="lifeline ll-school">2014: Aftudeer stage bij PinkRoccade Local Government</p>
+                <p class="lifeline ll-school">2014: Afgestudeerd HBO ICT &amp; Media design</p>
+                <p class="lifeline ll-work">2014: In dienst bij PinkRoccade Local Government</p>
+                <p class="lifeline ll-school">2016: Cursus PostgreSQL</p>
+                <p class="lifeline ll-work">2017: In dienst bij ...</p>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>Made in 2017. No animals were harmed during development.</p>
+    </footer>
+</body>
+</html>
