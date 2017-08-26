@@ -8,22 +8,28 @@ const links = new Vue({
     links: [
       {
         href: "https://github.com/Brutusn",
-        text: "GitHub"
+        text: "GitHub",
+        icon: "fa-github"
       }, {
         href: "https://www.youtube.com/user/SahiSionie",
-        text: "YouTube"
+        text: "YouTube",
+        icon: "fa-youtube-play"
       }, {
         href: "https://www.facebook.com/proef.abonnement",
-        text: "Facebook"
+        text: "Facebook",
+        icon: "fa-facebook-official"
       }, {
         href: "https://twitter.com/iAteTweetTweet",
-        text: "Twitter"
+        text: "Twitter",
+        icon: "fa-twitter"
       }, {
         href: "https://www.instagram.com/proef_a/",
-        text: "Instagram"
+        text: "Instagram",
+        icon: "fa-instagram"
       }, {
         href: "https://www.linkedin.com/in/bart-niessen-130b6073/",
-        text: "LinkedIn"
+        text: "LinkedIn",
+        icon: "fa-linkedin-square"
       }
     ]
   }

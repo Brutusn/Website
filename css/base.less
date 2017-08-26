@@ -28,10 +28,40 @@ body {
 .pre-wrap {
     white-space: pre-wrap;
 }
-.site-link {
+
+// TODO REDO THIS WITH base.less .site-link
+.a-as-btn, .site-link {
     text-decoration: none;
+    transition: all .2s ease;
+}
+
+.btn-a-container {
+    --margin-size: .25em;
+    margin: ~"calc(-1 * var(--margin-size))";
+}
+
+.a-as-btn {
+  display: inline-block;
+
+  margin: var(--margin-size);
+  padding: .5em 1em;
+
+  background-color: var(--base-color);
+  color: var(--lightgray);
+
+  border-radius: 3px;
+
+  &:hover {
+    background-color: var(--lighter2);
+  }
+  &:visited {
+     background-color: var(--lighter1);
+  }
+}
+
+
+.site-link {
     color: var(--base-color);
-    transition: color .2s ease;
     &:active {
         color: var(--darker2);
     }
