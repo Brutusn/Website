@@ -60,22 +60,30 @@ Tijdens mijn werkzaamheden heb ik ruim kunnen ervaren hoe het is om in de back-e
             </section>
             <section class="card">
                 <h1 class="no-top-margin">Korte levensloop:</h1>
-                <p class="lifeline ll-personal">1987: Geboren in Veghel</p>
-                <p class="lifeline ll-personal">1995: Lid van Scouting Veghel</p>
-                <p class="lifeline ll-personal">2002: Leider bij Scouting Veghel (welpen)</p>
-                <p class="lifeline ll-school">2005: Geslaagd HAVO</p>
-                <p class="lifeline ll-work">2006: Hulpkracht Intratuin</p>
-                <p class="lifeline ll-work">2007: Gestart als taxi chauffeur</p>
-                <p class="lifeline ll-personal">2008: Start landelijk vrijwilliger Scouting Nederland</p>
-                <p class="lifeline ll-school">2009: Start HBO ICT &amp; Media design</p>
-                <p class="lifeline ll-work">2012: Stage Eindhovens Dagblad</p>
-                <p class="lifeline ll-school">2012: Minor Engels</p>
-                <p class="lifeline ll-personal">2014: Barhoofd Nawaka 2014</p>
-                <p class="lifeline ll-school">2014: Aftudeer stage bij PinkRoccade Local Government</p>
-                <p class="lifeline ll-school">2014: Afgestudeerd HBO ICT &amp; Media design</p>
-                <p class="lifeline ll-work">2014: In dienst bij PinkRoccade Local Government</p>
-                <p class="lifeline ll-school">2016: Cursus PostgreSQL</p>
-                <p class="lifeline ll-work">2017: In dienst bij Deverence</p>
+                <span id="ll-events" v-bind:class="clName">
+                    <ul class="ll-list-container">
+                        <li v-on:click="highlight('work', true)" v-on:mouseenter="highlight('work')" v-on:mouseleave="removeHighlight()" class="ll-work">Werk</li>
+                        <li v-on:click="highlight('school', true)" v-on:mouseenter="highlight('school')" v-on:mouseleave="removeHighlight()"  class="ll-school">School</li>
+                        <li v-on:click="highlight('personal', true)" v-on:mouseenter="highlight('personal')" v-on:mouseleave="removeHighlight()"  class="ll-personal">Persoonlijk</li>
+                    </ul>
+                    <p class="lifeline ll-personal">1987: Geboren in Veghel</p>
+                    <p class="lifeline ll-personal">1995: Lid van Scouting Veghel</p>
+                    <p class="lifeline ll-personal">2002: Leider bij Scouting Veghel (welpen)</p>
+                    <p class="lifeline ll-school">2005: Geslaagd HAVO</p>
+                    <p class="lifeline ll-work">2006: Hulpkracht Intratuin</p>
+                    <p class="lifeline ll-work">2007: Gestart als taxi chauffeur</p>
+                    <p class="lifeline ll-personal">2008: Start landelijk vrijwilliger Scouting Nederland</p>
+                    <p class="lifeline ll-school">2009: Start HBO ICT &amp; Media design</p>
+                    <p class="lifeline ll-work">2012: Stage Eindhovens Dagblad</p>
+                    <p class="lifeline ll-school">2012: Minor Engels</p>
+                    <p class="lifeline ll-personal">2014: Barhoofd Nawaka 2014</p>
+                    <p class="lifeline ll-school">2014: Aftudeer stage bij PinkRoccade Local Government</p>
+                    <p class="lifeline ll-school">2014: Afgestudeerd HBO ICT &amp; Media design</p>
+                    <p class="lifeline ll-work">2014: In dienst bij PinkRoccade Local Government</p>
+                    <p class="lifeline ll-school">2016: Cursus PostgreSQL</p>
+                    <p class="lifeline ll-personal">2016: Verhuisd naar Leiden</p>
+                    <p class="lifeline ll-work">2017: In dienst bij Deverence</p>
+                </span>
             </section>
         </article>
     </main>

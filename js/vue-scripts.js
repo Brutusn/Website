@@ -34,3 +34,34 @@ const links = new Vue({
     ]
   }
 });
+
+const llEvents = new Vue({
+    el: "#ll-events",
+    data: {
+        clName: "test",
+        timer: null
+    },
+    methods: {
+        highlight (cl, click) {
+            this.changeHighlight(`highlight-${cl}`);
+
+            if (click) {
+                this.removeHighlight(true, 2500);
+            }
+        },
+        changeHighlight (cl) {
+            this.clName = cl;
+        },
+        removeHighlight (timed, delay) {
+            if (timed) {
+                window.clearTimeout(this.timer);
+                this.timer = setTimeout(() => {
+                    this.changeHighlight("");
+                }, delay);
+            } else {
+                this.changeHighlight("");
+            }
+        }
+
+    }
+});
