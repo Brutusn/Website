@@ -15,8 +15,15 @@
 
     <link href="css/css.min.css" rel="stylesheet">
 
-    <title>Bart Niessen</title>
+    <title>Bart Niessen in Vue</title>
 
+    <!--DEV version -->
+    <!--<script src="https://unpkg.com/vue"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+
+    <script src="https://use.fontawesome.com/3cdc861506.js"></script>
+
+    <script defer src="js/vue-scripts.js"></script>
     <script defer src="js/script.js"></script>
 </head>
 <body>
@@ -34,14 +41,12 @@
                     <tr><td>Functie:</td><td>Front-end webdeveloper.</td></tr>
                 </table>
             </section>
-            <section class="card">
+            <section id="links" class="card">
                 <h1 class="no-top-margin">Je kan mij vinden op:</h1>
-                <p class="no-bottom-margin"><a class="site-link" href="https://github.com/Brutusn" target="_blank">GitHub</a>,
-                                            <a class="site-link" href="https://www.youtube.com/user/SahiSionie" target="_blank">YouTube</a>,
-                                            <a class="site-link" href="https://www.facebook.com/proef.abonnement" target="_blank">Facebook</a>,
-                                            <a class="site-link" href="https://twitter.com/iAteTweetTweet" target="_blank">Twitter</a>,
-                                            <a class="site-link" href="https://www.instagram.com/proef_a/" target="_blank">Instagram</a>, en
-                                            <a class="site-link" href="https://www.linkedin.com/in/bart-niessen-130b6073/" target="_blank">LinkedIn</a></p>
+                <p class="no-bottom-margin btn-a-container">
+                  <a v-for="link in links" class="a-as-btn" :href="link.href" target="_blank">
+                      <i class="fa" v-bind:class="[link.icon]" aria-hidden="true"></i> {{ link.text }}</a>
+                </p>
             </section>
             <section class="card">
                 <h1 class="no-top-margin">Bio:</h1>
@@ -58,22 +63,30 @@ Tijdens mijn werkzaamheden heb ik ruim kunnen ervaren hoe het is om in de back-e
             </section>
             <section class="card">
                 <h1 class="no-top-margin">Korte levensloop:</h1>
-                <p class="lifeline ll-personal">1987: Geboren in Veghel</p>
-                <p class="lifeline ll-personal">1995: Lid van Scouting Veghel</p>
-                <p class="lifeline ll-personal">2002: Leider bij Scouting Veghel (welpen)</p>
-                <p class="lifeline ll-school">2005: Geslaagd HAVO</p>
-                <p class="lifeline ll-work">2006: Hulpkracht Intratuin</p>
-                <p class="lifeline ll-work">2007: Gestart als taxi chauffeur</p>
-                <p class="lifeline ll-personal">2008: Start landelijk vrijwilliger Scouting Nederland</p>
-                <p class="lifeline ll-school">2009: Start HBO ICT &amp; Media design</p>
-                <p class="lifeline ll-work">2012: Stage Eindhovens Dagblad</p>
-                <p class="lifeline ll-school">2012: Minor Engels</p>
-                <p class="lifeline ll-personal">2014: Barhoofd Nawaka 2014</p>
-                <p class="lifeline ll-school">2014: Aftudeer stage bij PinkRoccade Local Government</p>
-                <p class="lifeline ll-school">2014: Afgestudeerd HBO ICT &amp; Media design</p>
-                <p class="lifeline ll-work">2014: In dienst bij PinkRoccade Local Government</p>
-                <p class="lifeline ll-school">2016: Cursus PostgreSQL</p>
-                <p class="lifeline ll-work">2017: In dienst bij Deverence</p>
+                <span id="ll-events" v-bind:class="clName">
+                    <ul class="ll-list-container">
+                        <li v-on:click="highlight('work', true)" v-on:mouseenter="highlight('work')" v-on:mouseleave="removeHighlight()" class="ll-work">Werk</li>
+                        <li v-on:click="highlight('school', true)" v-on:mouseenter="highlight('school')" v-on:mouseleave="removeHighlight()"  class="ll-school">School</li>
+                        <li v-on:click="highlight('personal', true)" v-on:mouseenter="highlight('personal')" v-on:mouseleave="removeHighlight()"  class="ll-personal">Persoonlijk</li>
+                    </ul>
+                    <p class="lifeline ll-personal">1987: Geboren in Veghel</p>
+                    <p class="lifeline ll-personal">1995: Lid van Scouting Veghel</p>
+                    <p class="lifeline ll-personal">2002: Leider bij Scouting Veghel (welpen)</p>
+                    <p class="lifeline ll-school">2005: Geslaagd HAVO</p>
+                    <p class="lifeline ll-work">2006: Hulpkracht Intratuin</p>
+                    <p class="lifeline ll-work">2007: Gestart als taxi chauffeur</p>
+                    <p class="lifeline ll-personal">2008: Start landelijk vrijwilliger Scouting Nederland</p>
+                    <p class="lifeline ll-school">2009: Start HBO ICT &amp; Media design</p>
+                    <p class="lifeline ll-work">2012: Stage Eindhovens Dagblad</p>
+                    <p class="lifeline ll-school">2012: Minor Engels</p>
+                    <p class="lifeline ll-personal">2014: Barhoofd Nawaka 2014</p>
+                    <p class="lifeline ll-school">2014: Aftudeer stage bij PinkRoccade Local Government</p>
+                    <p class="lifeline ll-school">2014: Afgestudeerd HBO ICT &amp; Media design</p>
+                    <p class="lifeline ll-work">2014: In dienst bij PinkRoccade Local Government</p>
+                    <p class="lifeline ll-school">2016: Cursus PostgreSQL</p>
+                    <p class="lifeline ll-personal">2016: Verhuisd naar Leiden</p>
+                    <p class="lifeline ll-work">2017: In dienst bij Deverence</p>
+                </span>
             </section>
         </article>
     </main>
