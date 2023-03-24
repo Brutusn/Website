@@ -32,12 +32,13 @@ function getAge (date, onDate) {
 (function initialization () {
     // Sets age specific to my birthday (31-03-1987);
     const currentAge = getAge("31-03-1987", (age) => {
-            document.getElementById("header-title").textContent = `FEEST! Ik ben vandaag ${age} geworden!`;
-        });
+        document.getElementById("header-title").textContent = `FEEST! Ik ben vandaag ${age} geworden!`;
+        document.title = '🎉 Jarig! 🎉';
+    });
 
     // Sets age specific to my birthday (31-03-1987);
     const elements = document.getElementsByClassName("set-age");
     for (const el of elements) {
-        el.textContent = currentAge;
+        el.textContent = currentAge.toString(10);
     }
 })();

@@ -8,7 +8,8 @@
     "less-plugin-clean-css": "latest"
   },
   "scripts": {
-    "css": "lessc --no-color --clean-css=\"--advanced\" css/total.less > css/css.min.css"
+    "css": "lessc --no-color --clean-css=\"--advanced\" css/total.less > css/css.min.css",
+    "docker": "npm run css && docker build -t bart-www . && docker image save -o ./docker/bart-www-image.tar bart-www"
   },
   "repository": {
     "type": "git",
